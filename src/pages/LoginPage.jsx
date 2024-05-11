@@ -46,7 +46,7 @@ export default function LoginPage() {
         <p className="text-sm text-gray-500">
           Belum punya akun?
           {' '}
-          <Link to="/register" className="text-blue-500">Daftar di sini.</Link>
+          <Link to="/register" className="text-blue-500">Daftar di sini sekarang juga.</Link>
         </p>
       </form>
     </div>
