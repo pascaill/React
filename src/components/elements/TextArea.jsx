@@ -1,13 +1,36 @@
-import React from 'react';
+import { css } from '@emotion/react';
 import PropTypes from 'prop-types';
 
 export default function Textarea({
   id, label, name, placeholder, type, value, onChange, rows,
 }) {
+  const textareaStyle = css`
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    padding: 8px;
+    margin-bottom: 8px;
+    &::placeholder {
+      font-size: 14px;
+    }
+  `;
+
   return (
     <>
-      <label htmlFor={id} className="block text-sm mb-1">{label}</label>
-      <textarea id={id} name={name} type={type} rows={rows} placeholder={placeholder} className="w-full block text-sm border rounded-md border-gray-200 outline-none py-1 px-3 placeholder:text-sm" onChange={onChange} value={value}>{value}</textarea>
+      <label htmlFor={id} css={css`display: block; font-size: 14px; margin-bottom: 8px;`}>{label}</label>
+      <textarea
+        id={id}
+        name={name}
+        type={type}
+        rows={rows}
+        placeholder={placeholder}
+        css={textareaStyle}
+        onChange={onChange}
+        value={value}
+      />
     </>
   );
 }
